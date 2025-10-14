@@ -1,0 +1,65 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <input type="text" id = "a1">
+        <input type="text" id = "a2">
+        <input type="text" id = "a3" placeholder=" + ,  - , / , * ">
+        <button type="button" onclick="calculate()">Submit</button>
+    </form>
+    <script>
+        function add(a,b){
+            var c = a+b;
+            alert("The sum is "+ c); 
+        }
+        function sub(a,b){
+            var c = a-b;
+            alert("The sum is "+ c); 
+        }
+        function div(a,b){
+            var c = a/b;
+            alert("The sum is "+ c); 
+        }
+        function mul(a,b){
+           var c = a*b;
+            alert("The sum is "+ c); 
+
+        }
+
+        function calculate(){
+             var a = document.getElementById("a1").value;
+            var b = document.getElementById("a2").value;
+            var op = document.getElementById("a3").value;
+            var a = parseInt(a);
+            var b = parseInt(b);
+
+        
+    
+        switch(op){
+            case '+' :
+                add(a,b);
+                break;
+            case '-' :
+                sub(a,b);
+                break;
+            case '/' :
+                div(a,b);
+                break;
+            case '*' :
+                mul(a,b);
+                break;
+            default :
+            alert("inviald");
+            break;
+        }
+    
+    }
+
+
+    </script>
+</body>
+</html>
