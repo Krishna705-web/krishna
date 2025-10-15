@@ -1,0 +1,22 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <form action="">
+        <input type="text" id = "a1">
+        
+        <button type="button" onclick="vote()">Submit</button>
+    </form>
+    <script>
+       function vote(a){
+         var a = document.getElementById("a1").value;
+        a = parseInt(a);
+         (a>=18)?document.write("eligible") : document.write("not eligible");
+       }
+
+    </script>
+</body>
+</html>

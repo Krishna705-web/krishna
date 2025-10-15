@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <form action="">
+        <input type="text" id = "a1">
+        <input type="text" id = "a2">
+        <input type="text" id = "a3">
+        <button type="button" onclick="calculate()">Submit</button>
+    </form>
+    <script>
+        function calculate(a, b, c) {
+         if (a > b) {
+        if (a > c) {
+            alert("a is greater");
+        } else {
+            console.log("c is greater");
+        }
+        } else if (b > c) {
+        console.log("b is greater");
+     } else {
+        console.log("c is greater");
+    }
+}
+     function checknum(num){
+        if( num%2==0){
+            console.log(" num is even");
+        }else{
+            console.log("num is odd");
+        }
+     }
+
+    
+         calculate(2,5,7);
+        checknum(5)
+
+    </script>
+</body>
+</html>
