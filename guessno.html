@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number Game</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(45deg, #0a0a0a, #3a4452);
+            color: white;
+        }
+        .game-container{
+            text-align: center;
+            background: rgba(0,0,0,0.6);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 15px #000;
+        }
+        input[type=number]{
+            padding: 10px;
+            font-size: 18px;
+            width: 100px;
+            margin: 10px 0;
+        }
+        button{
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+            border: none;
+            margin: 5px;
+            background-color: #fb7c14;
+            color: white;
+        }
+        p{
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <h2>Guess the Number!</h2>
+        <p>Enter a number between 1 and 100:</p>
+        <input type="number" id="userGuess" min="1" max="100">
+        <br>
+        <button onclick="checkGuess()" id="dis">Guess</button>
+        <button onclick="restartGame()" id="dis">Restart</button>
+        <p id="message"></p>
+        <p id="attempts"></p>
+    </div>
+
+    <script>
+        // Generate a random number between 1 and 100
+        let secretNumber = Math.floor(Math.random() * 100) + 1;
+        let tries = 0;
+
+        function checkGuess(){
+            let userGuess = Number(document.getElementById("userGuess").value);
+            let message = document.getElementById("message");
+            let attempts = document.getElementById("attempts");
+            dis.disabled = true;
+            dis.disabled = true;
+
+            tries++;
+
+            if(userGuess === secretNumber){
+                message.textContent = "🎉 Congratulations! You guessed it!";
+                attempts.textContent = "Number of attempts: " + tries;
+    
+            } else if(userGuess > secretNumber){
+                message.textContent = "Too high! Try a smaller number.";
+                attempts.textContent = "Attempts: " + tries;
+            } else if(userGuess < secretNumber){
+                message.textContent = "Too low! Try a bigger number.";
+                attempts.textContent = "Attempts: " + tries;
+            } else {
+                message.textContent = "Please enter a valid number!";
+                tries--; // don't count invalid input
+            }
+
+            document.getElementById("userGuess").value = "";
+            document.getElementById("userGuess").focus();
+        }
+
+        function restartGame(){
+            secretNumber = Math.floor(Math.random() * 100) + 1; // new random number
+            tries = 0;
+            document.getElementById("message").textContent = "";
+            document.getElementById("attempts").textContent = "";
+            document.getElementById("userGuess").value = "";
+            document.getElementById("userGuess").focus();
+            dis.disabled = false;
+            dis.disabled = false;
+            
+        }
+    </script>
+</body>
+</html>
